@@ -50,4 +50,14 @@ insert into PERMISSION_ROLE (PERMISSION_ID, ROLE_ID) values
 	'authorization_code,password,refresh_token,implicit,client_credentials',
 	null,null,
 	900,3600,
-	'{}',null);
+	'{}',null),
+		(
+    '8765dbfe-48a7-4d2b-8cf4-cdf10aae46e4','$2y$12$Hd7vDUVW7yuZcdKVwrgvAeQ.keFoAAtRdavuxQ2KGecoOtMSVVGKK',
+	'USER_CLIENT_RESOURCE,USER_ADMIN_RESOURCE',
+	'all,role_admin,role_user',
+	'authorization_code,password,refresh_token,implicit,client_credentials',
+	null,null,
+	900,3600,
+	'{}',null);;
+
+
