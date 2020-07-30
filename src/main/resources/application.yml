@@ -38,3 +38,11 @@ spring:
     password:
     schema: classpath:/script/schema.sql
     data: classpath:/script/data.sql
+
+oauth2-config:
+  jksConfigFileName: security/jwt.jks
+  keyPassword: changeit
+  jksKeyAlias: lms-dev-keystore
+  userScopes: true
+  accessTokenValiditySeconds: 10
+  refreshTokenValiditySeconds: 10
