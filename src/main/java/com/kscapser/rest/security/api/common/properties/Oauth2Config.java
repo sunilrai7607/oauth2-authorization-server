@@ -1,4 +1,4 @@
-package com.kscapser.rest.api.oauth2.common.properties;
+package com.kscapser.rest.security.api.common.properties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

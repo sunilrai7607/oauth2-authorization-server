@@ -1,7 +1,7 @@
-package com.kscapser.rest.api.oauth2.service;
+package com.kscapser.rest.security.api.service;
 
 
-import com.kscapser.rest.api.oauth2.repository.AccountRepository;
+import com.kscapser.rest.security.api.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;

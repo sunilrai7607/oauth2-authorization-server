@@ -1,6 +1,6 @@
-package com.kscapser.rest.api.oauth2.config;
+package com.kscapser.rest.security.api.config;
 
-import com.kscapser.rest.api.oauth2.service.ICustomUserDetails;
+import com.kscapser.rest.security.api.service.ICustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

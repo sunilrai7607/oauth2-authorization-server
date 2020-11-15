@@ -1,4 +1,4 @@
-package com.kscapser.rest.api.oauth2.repository.entity;
+package com.kscapser.rest.security.api.repository.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

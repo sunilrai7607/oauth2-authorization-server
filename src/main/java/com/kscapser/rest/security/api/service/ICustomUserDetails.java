@@ -1,4 +1,4 @@
-package com.kscapser.rest.api.oauth2.service;
+package com.kscapser.rest.security.api.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 

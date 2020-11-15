@@ -1,7 +1,7 @@
-package com.kscapser.rest.api.oauth2.common.utility;
+package com.kscapser.rest.security.api.common.utility;
 
-import com.kscapser.rest.api.oauth2.repository.AccountRepository;
-import com.kscapser.rest.api.oauth2.repository.entity.Account;
+import com.kscapser.rest.security.api.repository.AccountRepository;
+import com.kscapser.rest.security.api.repository.entity.Account;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;

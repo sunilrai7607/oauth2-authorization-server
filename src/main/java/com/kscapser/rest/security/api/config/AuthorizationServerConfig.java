@@ -1,8 +1,8 @@
-package com.kscapser.rest.api.oauth2.config;
+package com.kscapser.rest.security.api.config;
 
-import com.kscapser.rest.api.oauth2.common.properties.Oauth2Config;
-import com.kscapser.rest.api.oauth2.common.utility.CustomJwtTokenAccessConverter;
-import com.kscapser.rest.api.oauth2.repository.AccountRepository;
+import com.kscapser.rest.security.api.common.properties.Oauth2Config;
+import com.kscapser.rest.security.api.common.utility.CustomJwtTokenAccessConverter;
+import com.kscapser.rest.security.api.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
@@ -21,6 +22,7 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 import javax.sql.DataSource;
 
 @Configuration
+@EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     private final AuthenticationManager authenticationManager;
@@ -41,18 +43,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
-        ;
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        //In-memory
-//        clients.inMemory()
-//                .withClient("client-server")
-//                .secret(encoder().encode("client-secret"))
-//                .authorizedGrantTypes("client_credentials")
-//                .scopes("all");
-        //Jdbc
         clients.jdbc(dataSource).passwordEncoder(encoder).build();
     }
 
